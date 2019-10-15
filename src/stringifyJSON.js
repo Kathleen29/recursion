@@ -57,11 +57,3 @@ var stringifyJSON = function(obj) {
   transformToString(obj);
   return result;
 };
-
-
-console.log(stringifyJSON([
-  {
-    'functions': function() {},
-    'undefined': undefined
-  }
-]));
