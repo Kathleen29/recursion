@@ -8,18 +8,18 @@ var getElementsByClassName = function(className) {
   // your code here
   var results = [];
 
-  function iterator(node) {
-  	//check if the current node has a class list and if the class list contains the target class name
-  	if (node.classList && node.classList.contains(className)) {
+  function iterator(element) {
+  	//check if the current element has a class list and if the class list contains the target class name
+  	if (element.classList && element.classList.contains(className)) {
   		//push nodes with matching class names to the results array
-  		results.push(node);
+  		results.push(element);
   	};
   	//loop through all of the child nodes of the given node and recursively call the iterator function on each
-  	for (let i = 0; i < node.childNodes.length; i++){
-  		iterator(node.childNodes[i]);
+  	for (let i = 0; i < element.childNodes.length; i++){
+  		iterator(element.childNodes[i]);
   	}
   }
 
- 	iterator(document);
+ 	iterator(document.body);
  	return results;
 };
